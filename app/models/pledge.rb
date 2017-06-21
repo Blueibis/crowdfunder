@@ -2,6 +2,9 @@ class Pledge < ApplicationRecord
   belongs_to :user
   belongs_to :project
 
+  validates :user_id, uniqueness: { scope: [:project_id],
+    :message => "has already pledged!" }
+
   validates :dollar_amount, presence: true
   validate :abra_cadaver
 
@@ -10,5 +13,5 @@ class Pledge < ApplicationRecord
       errors.add(:user, "cannot pledge as owner.")
     end
   end
-    
+
 end
