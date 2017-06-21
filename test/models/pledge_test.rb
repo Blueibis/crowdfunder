@@ -3,12 +3,15 @@ require 'test_helper'
 class PledgeTest < ActiveSupport::TestCase
 
   test 'A pledge can be created' do
+
     project = new_project
+    project.owner = owner
     project.save
-    pledge = Pledge.create(
+    pledge = Pledge.new(
       dollar_amount: 99.00,
       project: project
     )
+    pledge.user = User.new
     pledge.save
     assert pledge.valid?
     assert pledge.persisted?
