@@ -9,5 +9,6 @@ class Pledge < ApplicationRecord
     if user_id == project.owner_id
       errors.add(:user, "cannot pledge as owner.")
     end
-   end
+  end
+  
 end
