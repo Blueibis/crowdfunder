@@ -10,5 +10,5 @@ class Pledge < ApplicationRecord
       errors.add(:user, "cannot pledge as owner.")
     end
   end
-  
+    
 end
