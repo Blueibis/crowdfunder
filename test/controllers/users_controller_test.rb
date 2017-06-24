@@ -25,4 +25,11 @@ class UsersControllerTest < ActionController::TestCase
     post :create, params: {user: {email: user2.email, password: user2.password, password_confirmation: user2.password_confirmation}}
     assert_template :new
   end
+
+  test "show renders current user profile page" do
+    user = User.create(email: "bettymaker@gmail.com", password: "12345678", password_confirmation: "12345678")
+    session[:user_id] = user.id
+    get :show, params: {id: "foo" }
+    assert_response :success
+  end
 end
