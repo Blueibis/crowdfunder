@@ -38,7 +38,7 @@
 
 <h2>Add New Comment</h2>
 
-<%= form_for([@project, @comment]) do |f| %>
+<%= form_for([@project, @project.comments.build]) do |f| %>
 
   <div class="field">
     <%= f.label :name %><br />
@@ -53,7 +53,9 @@
 
 <h2>Comments:</h2>
 <ol>
+
   <% @project.comments.each do |comment| %>
+    <% next if comment.new_record? %>
     <li>
       <p> On <%= comment.created_at %> <%= comment.name %> said: </p>
       <p> <%= comment.user_comment %> </p>
