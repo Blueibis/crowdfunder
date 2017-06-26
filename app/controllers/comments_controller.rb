@@ -37,10 +37,11 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:id])
+    @project = Project.find(params[:project_id])
+    @comment = @project.comments.find(params[:id])
     @comment.destroy
     flash[:notice] = "Your comment has been successfully deleted!"
-    redirect_to root_path
+    redirect_to project_path(@project)
   end
 
   def comment_params

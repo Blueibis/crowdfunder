@@ -8,7 +8,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @comment = @project.comments.new
+    @comment = Comment.new
   end
 
   def new
