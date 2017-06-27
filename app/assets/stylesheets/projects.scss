@@ -4,13 +4,18 @@
 
 .project {
   text-align: center;
-  margin: 1rem 0;
+  margin: 1rem 1rem;
   padding: 1rem 0;
-  background-color: #f9f9f9;
+  display: inline-block;
+  width: 30%;
 }
-
+.new_project_link {
+  text-align: center;
+}
 .project-image > img {
   margin: auto;
+  height: 200px;
+  width: 100%;
 }
 
 .project-link {
@@ -25,4 +30,10 @@
 
 .project-days-left {
   font-size: 0.75em;
+}
+
+.jumbo > img {
+    height: 500px;
+    width: 100%;
+    margin-top: 1em;
 }

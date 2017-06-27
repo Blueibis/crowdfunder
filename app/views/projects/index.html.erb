@@ -1,4 +1,9 @@
-<%= link_to "New Project", new_project_path %>
+<div class="new_project_link">
+  <%= link_to "New Project", new_project_path %>
+</div>
+<div class="jumbo">
+  <%= image_tag 'https://d36tnp772eyphs.cloudfront.net/blogs/1/2014/05/04-3.jpg' %>
+</div>
 
 <% @projects.each do |project| %>
   <article class="project">
