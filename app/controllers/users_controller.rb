@@ -3,6 +3,11 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show
+    @user = User.find(session[:user_id])
+    @pledges = Pledge.where(user_id: @user.id)
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save

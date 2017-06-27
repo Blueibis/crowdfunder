@@ -1,0 +1,14 @@
+<h2>My profile</h2>
+<div class="user_show">
+  <h3><%= @user.full_name %></h3>
+  <p><%= @user.email %></p>
+    <% @pledges.each do |pledge| %>
+    <h4>Project: <%= pledge.project.title %></h4>
+    <p>
+      From: <%= pledge.project.start_date %> to <%= pledge.project.end_date %><br>
+      Goal: $<%= pledge.project.goal %><br>
+      You pledged: $<%= pledge.dollar_amount %>
+    </p>
+    <p>This project was created by <%= pledge.project.owner.full_name %></p>
+    <% end %>
+</div>

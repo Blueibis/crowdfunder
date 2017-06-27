@@ -6,4 +6,9 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true, on: :create
 
   validates :email, uniqueness: true
+
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
+
 end
